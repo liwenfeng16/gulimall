@@ -12,6 +12,7 @@
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>2.1.8.RELEASE</version>
+		<relativePath />
 	</parent>
 
 	<properties>
@@ -26,7 +27,7 @@
 		<fastjson.version>1.2.45</fastjson.version>
 		<velocity.version>1.7</velocity.version>
 		<pagehelper.spring.boot.version>1.2.5</pagehelper.spring.boot.version>
-		<mysql.version>5.1.38</mysql.version>
+		<mysql.version>8.0.17</mysql.version>
 		<mssql.version>4.0</mssql.version>
 		<oracle.version>11.2.0.3</oracle.version>
 	</properties>
@@ -87,18 +88,18 @@
 			<artifactId>mysql-connector-java</artifactId>
 			<version>${mysql.version}</version>
 		</dependency>
-		<!-- oracle驱动 -->
+		<!--&lt;!&ndash; oracle驱动 &ndash;&gt;
 		<dependency>
 			<groupId>com.oracle</groupId>
 			<artifactId>ojdbc6</artifactId>
 			<version>${oracle.version}</version>
 		</dependency>
-		<!-- sqlserver驱动 -->
+		&lt;!&ndash; sqlserver驱动 &ndash;&gt;
 		<dependency>
 			<groupId>com.microsoft.sqlserver</groupId>
 			<artifactId>sqljdbc4</artifactId>
 			<version>${mssql.version}</version>
-		</dependency>
+		</dependency>-->
 		<!-- postgresql驱动 -->
 		<dependency>
 			<groupId>org.postgresql</groupId>
@@ -115,7 +116,7 @@
 		</plugins>
 	</build>
 
-	<repositories>
+	<!--<repositories>
 		<repository>
 			<id>public</id>
 			<name>aliyun nexus</name>
@@ -137,6 +138,6 @@
 				<enabled>false</enabled>
 			</snapshots>
 		</pluginRepository>
-	</pluginRepositories>
+	</pluginRepositories>-->
 
 </project>
