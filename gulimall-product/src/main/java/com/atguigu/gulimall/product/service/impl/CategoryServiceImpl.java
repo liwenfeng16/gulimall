@@ -44,13 +44,19 @@ public class CategoryServiceImpl extends ServiceImpl<CategoryDao, CategoryEntity
         List<CategoryEntity> level1Menus = entities.stream().filter(categoryEntity ->
                 categoryEntity.getParentCid() == 0
         ).map((menu) -> {
-            menu.setChildren(getChildrens(menu,entities));
+            menu.setChildren(getChildrens(menu, entities));
             return menu;
         }).sorted((menu1, menu2) -> {
             return (menu1.getSort() == null ? 0 : menu1.getSort()) - (menu2.getSort() == null ? 0 : menu2.getSort());
         }).collect(Collectors.toList());
 
         return level1Menus;
+    }
+
+    @Override
+    public void removeMenuByIds(List<Long> list) {
+        //TODO 是否被引用，没有引用才可删除
+        baseMapper.deleteBatchIds(list);
     }
 
     /**
